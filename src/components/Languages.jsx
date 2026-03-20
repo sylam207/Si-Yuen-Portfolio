@@ -31,6 +31,12 @@ const Languages = () => {
           <img src={tsLogo} alt="TypeScript" className={imgStyle} />
         </div>
         <div className={cardStyle}>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="TypeScript" className={imgStyle} />
+        </div>
+        <div className={cardStyle}>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" alt="TypeScript" className={imgStyle} />
+        </div>
+        <div className={cardStyle}>
           <img src={rLogo} alt="R" className={imgStyle} />
         </div>
       </div>
