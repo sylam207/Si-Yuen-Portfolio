@@ -5,8 +5,6 @@ import { SiMongodb } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { SiExpress } from 'react-icons/si';
-import { SiGit } from "react-icons/si";
-import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 const Tech = () => {
     const cardStyle ="flex h-28 w-28 items-center justify-center rounded-2xl border border-neutral-800 p-4 transition hover:scale-110 hover:border-neutral-700";
