@@ -13,20 +13,24 @@ export const EXPERIENCES = [
     year: "2020 - Present",
     role: "Full Stack Developer",
     company: "Hack the Valley",
-    description: `Optimized React.js component structure and client-side performance, achieving a 50% reduction in load times and
-                  a smoother navigation experience for attendees. Improved application and login flow through mobile-first, responsive UI updates, resulting in higher completion
-                  rates for event signups. Architected and maintained a Django + GraphQL backend used by 1,000+ participants during a national
-                  hackathon, supporting event registration, authentication, and real-time updates.`,
+    description: `Optimized React.js components and client-side performance by improving rendering efficiency and state
+                  management, reducing load times by 50% and delivering a smoother user navigation experience.
+                  Improved application and login flow through mobile-first responsive UI design, increasing event signup completion
+                  rates and user conversion.
+                  Architected and maintained a Django + GraphQL backend supporting 1,000+ participants, enabling event
+                  registration, authentication, and real-time updates.`,
     image: hack
   },
   {
     year: "May 2022 - Jan 2023",
     role: "Software Developer",
     company: "Smile Digital Health",
-    description: `Developed full-stack functionality to streamline data exchange between distributed services, improving platform
-                  reliability and maintainability. Boosted Jest test coverage from 50% to 75% across key application modules, strengthening code reliability and
-                  reducing downstream production defects. Refactored and improved 10+ Node.js/TypeScript APIs, increasing data consistency and reducing end-to-end
-                  processing delays across key data pipelines.`,
+    description: `Developed full-stack features using Node.js, TypeScript, and Angular to enable data exchange across distributed
+                  healthcare systems (HL7 FHIR), improving system reliability and data integrity.
+                  Increased Jest test coverage from 50% to 65% by adding unit and integration tests for REST APIs and Angular
+                  components, reducing production bugs.
+                  Refactored 10+ RESTful APIs in Node.js/TypeScript to improve data validation and consistency, reducing
+                  end-to-end processing delays.`,
     image: smile
   },
   {
@@ -36,19 +40,19 @@ export const EXPERIENCES = [
     description: `Refactored 15+ Angular components, improving code clarity and reducing duplicated logic by 40%, which increased
     overall front-end maintainability. Engineered and integrated 10+ REST APIs using ASP.NET Core + MongoDB, streamlining service-to-service data
     flow and reducing backend latency 25%. Implemented end-to-end observability with OpenTelemetry + Datadog, enabling monitoring of 50+ metrics and
-    improving issue detection and resolution time 50%.`,
+    improving issue detection and resolution time by 50%.`,
     image: quest
   },
   {
     year: "Sept 2020 - Jan 2021",
     role: "Software Developer",
     company: "ML Analytix",
-    description: `Integrated computer vision and video-encoding pipelines into the WareTix platform, enabling automated inventory
-    tracking and reducing manual checks for warehouse staff. 
-    Created an interactive React.js dashboard to visualize generative design output, improving research workflows and
-    reducing repetitive manual review work for the team. 
-    Delivered real-time analytics through responsive charts backed by a Django REST API + MySQL, improving data
-    visibility for internal stakeholders and early platform testers.`,
+    description: `Built interactive React dashboards using charting libraries to visualize warehouse and computer vision data,
+                  enabling real-time monitoring of inventory and operations.
+                  Developed Django REST API endpoints and MySQL queries to retrieve and process data, improving accessibility
+                  and reducing manual data retrieval.
+                  Implemented dynamic visualization and filtering features, streamlining analysis workflows and improving
+                  decision-making efficiency`,
     image: ml
   },
 ];
