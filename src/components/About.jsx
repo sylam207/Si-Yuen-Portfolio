@@ -41,7 +41,7 @@ const About = () => {
                     className="w-full lg:w-1/2 lg:p-8"
                 >
                     <div className="flex items-center justify-center">
-                        <img src={about} alt="about" loading="lazy"/>
+                        <img src={about} alt="Si Yuen's hobbies and interests illustration" loading="lazy"/>
                     </div>
                 </motion.div>
                 <motion.div

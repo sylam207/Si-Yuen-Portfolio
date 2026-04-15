@@ -1,6 +1,6 @@
 import { HERO_CONTENT } from "../constants";
 import { HERO_CONTENT_2 } from "../constants";
-import profile from "../assets/profile.png";
+import profile from "../assets/profile.webp";
 import resume from "../assets/Resume.pdf"
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -67,14 +67,17 @@ const Hero = () => {
                             transition={{ duration: 0.6, delay: 0.8 }}
                             className="mt-6 flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
                         >
-                            <a href={resume} 
+                            <a href={resume}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="
                                 w-full sm:w-auto text-center
                                 rounded-xl px-6 sm:px-10 py-3 text-lg font-medium text-white
                                 bg-linear-to-r from-pink-300 via-slate-500 to-purple-500
                                 transition duration-300
                                 hover:scale-105
-                                hover:shadow-[0_0_25px_rgba(168,85,247,0.5)]">
+                                hover:shadow-[0_0_25px_rgba(168,85,247,0.5)]
+                                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400">
                                 Resume
                                 </a>
                             </motion.div>
@@ -87,7 +90,7 @@ const Hero = () => {
                     className="w-full lg:w-1/3 flex justify-center lg:justify-end"
                 >
                     <div className="flex justify-center">
-                        <img src={profile} alt="profile" loading="lazy" className="h-190 object-cover rounded-2xl"/>
+                        <img src={profile} alt="Si Yuen Lam portrait photo" loading="lazy" className="h-190 object-cover rounded-2xl"/>
                     </div>
                 </motion.div>
             </div>

@@ -1,22 +1,16 @@
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { NAV_ITEMS } from "../constants";
 
 const Footer = () => {
-  const navItems = [
-    { href: "#About", label: "About" },
-    { href: "#Experience", label: "Experience" },
-    { href: "#Languages", label: "Tech" },
-    { href: "#Contact", label: "Contact" },
-  ];
-
   return (
     <footer className="border-t border-neutral-800 py-10">
       <div className="flex flex-col items-center gap-6">
         <div className="flex gap-6 text-sm uppercase tracking-wide text-neutral-400">
-          {navItems.map((item) => (
+          {NAV_ITEMS.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="transition hover:text-purple-400"
+              className="transition hover:text-purple-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded"
             >
               {item.label}
             </a>
@@ -28,7 +22,7 @@ const Footer = () => {
             href="https://www.linkedin.com/in/si-yuen-lam/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition hover:text-blue-400"
+            className="transition hover:text-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded"
           >
             <FaLinkedin />
           </a>
@@ -36,7 +30,7 @@ const Footer = () => {
             href="https://github.com/sylam207"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition hover:text-white"
+            className="transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded"
           >
             <FaGithub />
           </a>
@@ -44,7 +38,7 @@ const Footer = () => {
             href="https://www.instagram.com/si_yuen/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition hover:text-pink-400"
+            className="transition hover:text-pink-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded"
           >
             <FaInstagram />
           </a>

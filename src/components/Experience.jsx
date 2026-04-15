@@ -53,9 +53,11 @@ const Experience = () => {
                                             <span className="text-sm text-purple-100">{experience.company}</span>
                                         </div>
                                     </div>
-                                    <p className="text-sm leading-relaxed text-neutral-400">
-                                        {experience.description}
-                                    </p>
+                                    <ul className="list-disc list-outside ml-4 space-y-1 text-sm leading-relaxed text-neutral-400">
+                                        {experience.description.map((bullet, i) => (
+                                            <li key={i}>{bullet}</li>
+                                        ))}
+                                    </ul>
                                 </div>
                             </div>
                         </motion.div>

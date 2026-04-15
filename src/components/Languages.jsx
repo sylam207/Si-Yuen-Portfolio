@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 const Languages = () => {
   const cardStyle = "flex h-28 w-28 items-center justify-center rounded-2xl border border-neutral-800 p-4 transition hover:scale-110 hover:border-neutral-700";
-  const imgStyle = "h-20 w-2- object-contain";
+  const imgStyle = "h-20 w-20 object-contain";
 
   return (
     <section id="Languages">
@@ -46,10 +46,10 @@ const Languages = () => {
           <img src={tsLogo} alt="TypeScript" className={imgStyle} />
         </div>
         <div className={cardStyle}>
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" className={imgStyle} />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" className={imgStyle} onError={(e) => { e.target.style.display = 'none'; }} />
         </div>
         <div className={cardStyle}>
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" alt="CSS" className={imgStyle} />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-plain.svg" alt="CSS" className={imgStyle} onError={(e) => { e.target.style.display = 'none'; }} />
         </div>
         <div className={cardStyle}>
           <img src={rLogo} alt="R" className={imgStyle} />

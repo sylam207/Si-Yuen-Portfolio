@@ -11,7 +11,7 @@ const Tech = () => {
     const cardStyle ="flex h-28 w-28 items-center justify-center rounded-2xl border border-neutral-800 p-4 transition hover:scale-110 hover:border-neutral-700";
     return (
 
-        <div className="border-b border-neutral-800 pb-24">
+        <section id="Tech" className="border-b border-neutral-800 pb-24">
             <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ const Tech = () => {
                     <FaNodeJs className="text-7xl text-green-400"/>
                 </div>
                 <div className={cardStyle}>
-                    <img alt src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"/>
+                    <img alt="Tailwind CSS" src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" onError={(e) => { e.target.style.display = 'none'; }}/>
                 </div>
                 <div className={cardStyle}>
                     <SiMongodb className="text-7xl text-green-400"/>
@@ -53,16 +53,16 @@ const Tech = () => {
                     <BiLogoPostgresql className="text-7xl text-sky-700"/>
                 </div>
                 <div className={cardStyle}>
-                    <img alt src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain.svg"/>
+                    <img alt="Git" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain.svg" onError={(e) => { e.target.style.display = 'none'; }}/>
                 </div>
                 <div className={cardStyle}>
-                    <img alt src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg"/>
+                    <img alt="Postman" src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" onError={(e) => { e.target.style.display = 'none'; }}/>
                 </div>
                 <div className={cardStyle}>
-                    <img alt src="https://skillicons.dev/icons?i=docker&theme=dark"/>
+                    <img alt="Docker" src="https://skillicons.dev/icons?i=docker&theme=dark" onError={(e) => { e.target.style.display = 'none'; }}/>
                 </div>
             </motion.div>
-        </div>
+        </section>
     );
 };
 

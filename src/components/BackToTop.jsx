@@ -22,7 +22,7 @@ const BackToTop = () => {
           exit={{ opacity: 0, scale: 0.5 }}
           onClick={scrollToTop}
           aria-label="Back to top"
-          className="fixed bottom-8 right-8 z-50 rounded-full bg-purple-600 p-3 text-white shadow-lg transition hover:bg-purple-500 hover:scale-110"
+          className="fixed bottom-8 right-8 z-50 rounded-full bg-purple-600 p-3 text-white shadow-lg transition hover:bg-purple-500 hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
         >
           <FaArrowUp />
         </motion.button>

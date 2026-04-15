@@ -1,30 +1,51 @@
+import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
-import Languages from './components/Languages';
-import Tech from './components/Tech';
-import Experience from './components/Experience';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import ErrorBoundary from './components/ErrorBoundary';
+import { motion, MotionConfig } from 'framer-motion';
 
+const About = lazy(() => import('./components/About'));
+const Languages = lazy(() => import('./components/Languages'));
+const Tech = lazy(() => import('./components/Tech'));
+const Experience = lazy(() => import('./components/Experience'));
+const Contact = lazy(() => import('./components/Contact'));
 
 const App = () => {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-neutral-950 text-neutral-300 antialiased">
+    <MotionConfig reducedMotion="user">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
+      className="relative min-h-screen overflow-x-hidden bg-neutral-950 text-neutral-300 antialiased"
+    >
       <div className="fixed inset-0 -z-10 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
       <div className="container mx-auto px-8">
         <Navbar/>
         <Hero/>
-        <About/>
-        <Languages/>
-        <Tech/>
-        <Experience/>
-        <Contact/>
+        <ErrorBoundary>
+        <Suspense fallback={
+          <div className="flex justify-center py-20">
+            <svg className="h-8 w-8 animate-spin text-purple-400" viewBox="0 0 24 24" fill="none">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+            </svg>
+          </div>
+        }>
+          <About/>
+          <Languages/>
+          <Tech/>
+          <Experience/>
+          <Contact/>
+        </Suspense>
+        </ErrorBoundary>
         <Footer/>
       </div>
       <BackToTop/>
-    </div>
+    </motion.div>
+    </MotionConfig>
   );
 };
 
