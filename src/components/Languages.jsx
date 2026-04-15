@@ -14,7 +14,7 @@ const Languages = () => {
   return (
     <section id="Languages">
     <div className="border-b border-neutral-800 pb-24">
-      <motion.h1
+      <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.5 }}
@@ -22,7 +22,7 @@ const Languages = () => {
         className="my-20 text-center text-4xl"
       >
         Languages
-      </motion.h1>
+      </motion.h2>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}

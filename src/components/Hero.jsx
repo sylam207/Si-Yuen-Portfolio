@@ -90,7 +90,7 @@ const Hero = () => {
                     className="w-full lg:w-1/3 flex justify-center lg:justify-end"
                 >
                     <div className="flex justify-center">
-                        <img src={profile} alt="Si Yuen Lam portrait photo" loading="lazy" className="h-190 object-cover rounded-2xl"/>
+                        <img src={profile} alt="Si Yuen Lam portrait photo" loading="lazy" className="h-[47.5rem] object-cover rounded-2xl"/>
                     </div>
                 </motion.div>
             </div>

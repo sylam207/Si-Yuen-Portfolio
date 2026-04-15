@@ -12,7 +12,7 @@ const Tech = () => {
     return (
 
         <section id="Tech" className="border-b border-neutral-800 pb-24">
-            <motion.h1
+            <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
@@ -20,7 +20,7 @@ const Tech = () => {
                 className="my-20 text-center text-4xl"
             >
                 Technologies & Tools
-            </motion.h1>
+            </motion.h2>
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}

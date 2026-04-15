@@ -1,8 +1,10 @@
 import logo from "../assets/SYlogo.png";
-import { NAV_ITEMS } from "../constants";
+import { NAV_ITEMS, SOCIAL_LINKS } from "../constants";
 import { FaLinkedin, FaGithub, FaInstagram, FaBars, FaTimes } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
+const iconMap = { FaLinkedin, FaGithub, FaInstagram };
 
 const sectionIds = ["About", "Experience", "Languages", "Contact"];
 
@@ -56,18 +58,15 @@ const Navbar = () => {
             ))}
           </div>
           <div className="flex items-center gap-4 text-2xl">
-            <a href="https://www.linkedin.com/in/si-yuen-lam/" target="_blank" rel="noopener noreferrer"
-              className="transition hover:scale-110 hover:text-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded">
-              <FaLinkedin />
-            </a>
-            <a href="https://github.com/sylam207" target="_blank" rel="noopener noreferrer"
-              className="transition hover:scale-110 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded">
-              <FaGithub />
-            </a>
-            <a href="https://www.instagram.com/si_yuen/" target="_blank" rel="noopener noreferrer"
-              className="transition hover:scale-110 hover:text-pink-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded">
-              <FaInstagram />
-            </a>
+            {SOCIAL_LINKS.map((link) => {
+              const Icon = iconMap[link.icon];
+              return (
+                <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer"
+                  className={`transition hover:scale-110 ${link.hoverColor} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded`}>
+                  <Icon />
+                </a>
+              );
+            })}
           </div>
         </div>
 
@@ -101,18 +100,15 @@ const Navbar = () => {
                 ))}
               </div>
               <div className="mt-6 flex justify-center gap-6 text-2xl">
-                <a href="https://www.linkedin.com/in/si-yuen-lam/" target="_blank" rel="noopener noreferrer"
-                  className="transition hover:scale-110 hover:text-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded">
-                  <FaLinkedin />
-                </a>
-                <a href="https://github.com/sylam207" target="_blank" rel="noopener noreferrer"
-                  className="transition hover:scale-110 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded">
-                  <FaGithub />
-                </a>
-                <a href="https://www.instagram.com/si_yuen/" target="_blank" rel="noopener noreferrer"
-                  className="transition hover:scale-110 hover:text-pink-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded">
-                  <FaInstagram />
-                </a>
+                {SOCIAL_LINKS.map((link) => {
+                  const Icon = iconMap[link.icon];
+                  return (
+                    <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer"
+                      className={`transition hover:scale-110 ${link.hoverColor} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 rounded`}>
+                      <Icon />
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </motion.div>

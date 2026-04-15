@@ -65,3 +65,9 @@ export const NAV_ITEMS = [
   { href: "#Languages", label: "Tech" },
   { href: "#Contact", label: "Contact" },
 ];
+
+export const SOCIAL_LINKS = [
+  { url: "https://www.linkedin.com/in/si-yuen-lam/", label: "LinkedIn", icon: "FaLinkedin", hoverColor: "hover:text-blue-400" },
+  { url: "https://github.com/sylam207", label: "GitHub", icon: "FaGithub", hoverColor: "hover:text-white" },
+  { url: "https://www.instagram.com/si_yuen/", label: "Instagram", icon: "FaInstagram", hoverColor: "hover:text-pink-400" },
+];

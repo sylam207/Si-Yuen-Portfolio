@@ -1,4 +1,5 @@
 import about from "../assets/about.png";
+import uoftLogo from "../assets/uoft.svg";
 import { motion } from "framer-motion";
 import { FaLanguage, FaPlane, FaRunning, FaPaintBrush, FaGamepad, FaMicrochip, FaCode, FaGlobe, FaLaptopCode, FaTrophy } from "react-icons/fa";
 
@@ -22,7 +23,7 @@ const About = () => {
     return (
         <section id="About">
         <div className="border-b border-neutral-900 pb-4">
-            <motion.h1
+            <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
@@ -30,8 +31,8 @@ const About = () => {
                 className="my-20 text-center text-4xl"
             >
             About
-            <span className="text-neutral-500"> Me</span>
-            </motion.h1>
+            <span className="text-neutral-400"> Me</span>
+            </motion.h2>
             <div className="flex flex-wrap">
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
@@ -88,7 +89,7 @@ const About = () => {
                         ))}
                     </motion.div>
 
-                    {/* Currently section */}
+                    {/* Education */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -96,25 +97,19 @@ const About = () => {
                         transition={{ duration: 0.5, delay: 0.5 }}
                         className="mt-6 max-w-xl rounded-xl border border-neutral-800 bg-neutral-900/60 p-5"
                     >
-                        <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-purple-400">Currently</p>
-                        <ul className="space-y-2 text-sm text-neutral-300">
-                            <li className="flex items-start gap-2">
-                                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-400" />
-                                Training for a half marathon
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-400" />
-                                Studying Japanese (JLPT prep)
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-400" />
-                                Building Arduino IoT projects
-                            </li>
-                            <li className="flex items-start gap-2">
-                                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-400" />
-                                Open to new software developer opportunities
-                            </li>
-                        </ul>
+                        <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-purple-400">Education</p>
+                        <div className="flex items-center gap-4">
+                            <img
+                                src={uoftLogo}
+                                alt="University of Toronto crest"
+                                className="h-12 w-12 shrink-0 object-contain"
+                            />
+                            <div>
+                                <p className="font-semibold">University of Toronto</p>
+                                <p className="text-sm text-purple-300">BSc in Statistics, Data Science & Machine Learning</p>
+                                <p className="mt-0.5 text-xs text-neutral-400">September 2018 – June 2024 · Toronto, ON</p>
+                            </div>
+                        </div>
                     </motion.div>
                 </motion.div>
             </div>

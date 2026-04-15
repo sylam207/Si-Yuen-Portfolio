@@ -43,7 +43,7 @@ const Contact = () => {
   return (
     <section id="Contact">
     <div className="border-b border-neutral-900 pb-20">
-      <motion.h1
+      <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.5 }}
@@ -51,7 +51,7 @@ const Contact = () => {
         className="my-10 text-center text-4xl"
       >
         Contact Me
-      </motion.h1>
+      </motion.h2>
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -143,7 +143,7 @@ const Contact = () => {
           )}
         </form>
 
-        <p className="mt-8 text-center text-sm text-neutral-500">
+        <p className="mt-8 text-center text-sm text-neutral-400">
           Based in Toronto, ON
         </p>
       </motion.div>

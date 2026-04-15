@@ -5,7 +5,7 @@ const Experience = () => {
     return (
         <section id="Experience">
         <div className="border-b border-neutral-900 pb-4">
-            <motion.h1
+            <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
@@ -13,7 +13,7 @@ const Experience = () => {
                 className="my-20 text-center text-4xl"
             >
                 Experience
-            </motion.h1>
+            </motion.h2>
             <div className="relative mx-auto max-w-4xl">
                 {/* Vertical timeline line */}
                 <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-neutral-700 md:left-1/2 md:-translate-x-1/2" />
