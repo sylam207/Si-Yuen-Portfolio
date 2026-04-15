@@ -1,5 +1,6 @@
-import { CONTACT } from "../constants";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -7,6 +8,7 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState("idle");
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -14,20 +16,51 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setStatus("sending");
 
-    const subject = `Message from ${form.name}`;
-    const body = `Name: ${form.name}%0D%0AEmail: ${form.email}%0D%0A%0D%0A${form.message}`;
-
-    window.location.href = `mailto:${CONTACT.email}?subject=${subject}&body=${body}`;
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        setStatus("success");
+        setForm({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+      })
+      .catch(() => {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 5000);
+      });
   };
 
   return (
     <section id="Contact">
     <div className="border-b border-neutral-900 pb-20">
-      <h1 className="my-10 text-center text-4xl">Contact Me</h1>
-      <div className="mx-auto max-w-xl">
+      <motion.h1
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+        className="my-10 text-center text-4xl"
+      >
+        Contact Me
+      </motion.h1>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6 }}
+        className="mx-auto max-w-xl"
+      >
         <p className="mb-8 text-center text-neutral-300">
-          I’m currently open to software developer opportunities. Feel free to reach out
+          I'm currently open to software developer opportunities. Feel free to reach out
         </p>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
@@ -38,7 +71,8 @@ const Contact = () => {
             value={form.name}
             onChange={handleChange}
             required
-            className="rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:border-purple-400"
+            disabled={status === "sending"}
+            className="rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:border-purple-400 disabled:opacity-50"
           />
 
           <input
@@ -48,7 +82,8 @@ const Contact = () => {
             value={form.email}
             onChange={handleChange}
             required
-            className="rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:border-purple-400"
+            disabled={status === "sending"}
+            className="rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:border-purple-400 disabled:opacity-50"
           />
 
           <textarea
@@ -58,29 +93,39 @@ const Contact = () => {
             onChange={handleChange}
             required
             rows={5}
-            className="rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:border-purple-400"
+            disabled={status === "sending"}
+            className="rounded-lg border border-neutral-700 bg-neutral-900 px-4 py-3 text-white placeholder-neutral-500 focus:outline-none focus:border-purple-400 disabled:opacity-50"
           />
 
           <button
             type="submit"
+            disabled={status === "sending"}
             className="
               mt-4 rounded-xl px-8 py-3 text-lg font-medium text-white
               bg-linear-to-r from-pink-300 via-slate-500 to-purple-500
               transition duration-300
               hover:scale-105
-              hover:shadow-[0_0_25px_rgba(168,85,247,0.5)]">
-            Send Message
+              hover:shadow-[0_0_25px_rgba(168,85,247,0.5)]
+              disabled:opacity-50 disabled:hover:scale-100 disabled:hover:shadow-none">
+            {status === "sending" ? "Sending..." : "Send Message"}
           </button>
+
+          {status === "success" && (
+            <p className="mt-2 text-center text-green-400">
+              Message sent successfully!
+            </p>
+          )}
+          {status === "error" && (
+            <p className="mt-2 text-center text-red-400">
+              Failed to send message. Please try again.
+            </p>
+          )}
         </form>
 
         <p className="mt-8 text-center text-sm text-neutral-500">
-          Based in Toronto, ON 
+          Based in Toronto, ON
         </p>
-
-        <p className="mt-4 text-center text-sm text-neutral-500">
-          © 2026 Si Yuen Lam
-        </p>
-      </div>
+      </motion.div>
     </div>
     </section>
   );

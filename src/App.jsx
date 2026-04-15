@@ -5,6 +5,8 @@ import Languages from './components/Languages';
 import Tech from './components/Tech';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
 
 
 const App = () => {
@@ -19,7 +21,9 @@ const App = () => {
         <Tech/>
         <Experience/>
         <Contact/>
+        <Footer/>
       </div>
+      <BackToTop/>
     </div>
   );
 };

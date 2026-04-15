@@ -4,6 +4,7 @@ import jsLogo from "../assets/javascript.png";
 import tsLogo from "../assets/typescript.png";
 import cLogo from "../assets/C.png";
 import rLogo from "../assets/R.png";
+import { motion } from "framer-motion";
 
 
 const Languages = () => {
@@ -13,8 +14,22 @@ const Languages = () => {
   return (
     <section id="Languages">
     <div className="border-b border-neutral-800 pb-24">
-      <h1 className="my-20 text-center text-4xl">Languages</h1>
-      <div className="flex flex-wrap items-center justify-center gap-4">
+      <motion.h1
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+        className="my-20 text-center text-4xl"
+      >
+        Languages
+      </motion.h1>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.6 }}
+        className="flex flex-wrap items-center justify-center gap-4"
+      >
         <div className={cardStyle}>
           <img src={pythonLogo} alt="Python" className={imgStyle} />
         </div>
@@ -39,7 +54,7 @@ const Languages = () => {
         <div className={cardStyle}>
           <img src={rLogo} alt="R" className={imgStyle} />
         </div>
-      </div>
+      </motion.div>
     </div>
     </section>
   );
